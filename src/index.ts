@@ -11,6 +11,7 @@ interface Id {
 
 // class 泛型时点出对应属性
 // 泛型需要继承接口
+// 进而约束泛型
 class TestUser<T extends Id> {
   run(value: T) {
     console.log(value.id);
@@ -35,6 +36,9 @@ interface IUserInfoService extends IBaseService<UserInfo> {
   Login(entity: UserInfo): boolean
 }
 
+/**
+ * 构造一个过滤函数接口
+ */
 interface Filter<T> {
   (value: T, index: number, array: T[]): boolean
 }
@@ -107,7 +111,10 @@ node?.addEventListener('click', function () {
     uname,
     upwd
   })
-  let where: Filter<UserInfo> = (item, index, arr) => { return true }
-  console.log(userInfoService.LoadEntities(where))
+  console.log(userInfoService.LoadEntities(() => true))
   alert(result ? "删除成功" : "删除失败");
 })
+
+// 打印编号以1结尾的
+let where: Filter<UserInfo> = (item, index, arr) => item.uname.endsWith('1')
+console.log(userInfoService.LoadEntities(where))
