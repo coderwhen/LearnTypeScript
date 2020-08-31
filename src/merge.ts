@@ -1,12 +1,3 @@
-# TypeScript声明合并
-
-## 说明
-```
-统一名字的interface function enum class会进行合并
-```
-
-## 代码
-```ts
 // 同名接口成员进行合并
 interface A {
     x: number
@@ -57,5 +48,3 @@ namespace Color {
     }
 }
 console.log(Color,Color.min())
-
-```
