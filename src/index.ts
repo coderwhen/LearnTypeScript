@@ -1,2 +1,1 @@
-let hello: string = 'hello TypeScript';
-console.log(hello);
+import './libs'
