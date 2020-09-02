@@ -4,7 +4,7 @@
 
 ### 是否编译的文件或目录
 
-``` json
+``` js
 {
     // 需要编译的文件路径
     "files": [
@@ -24,7 +24,7 @@
 
 ### 配置合并
 
-``` json
+``` js
 // tsconfig.base.json
 {
     // 需要编译的文件路径
@@ -56,7 +56,7 @@
 
 ### 配置文件
 
-``` json
+```js
 {
   "include": [
     "src"
@@ -178,7 +178,7 @@ console.log(hello);
 
 ### 添加引用
 
-``` json
+``` js
 // tsconfig.json 基本设置
 {
     "compilerOptions": {
@@ -194,6 +194,7 @@ console.log(hello);
         "declaration": true
     }
 }
+// 一下文件均是对应项目的tsconfig.json
 // client
 {
     // 扩展配置 上方基本配置
